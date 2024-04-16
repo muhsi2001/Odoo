@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="product_details.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//Orderline" position="inside">
+            <t t-if="line.discounted_product">
+                <div class="pos-receipt-padding">
+                    <span>Discounted Product</span>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

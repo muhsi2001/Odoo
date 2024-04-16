@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+<record model="ir.ui.view" id="multi_company_products_tree">
+        <field name="name">multi_company_products.tree</field>
+        <field name="model">multi.company.products</field>
+        <field name="arch" type="xml">
+            <tree>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="multi_company_products_form">
+        <field name="name">multi_company_products.form</field>
+        <field name="model">multi.company.products</field>
+        <field name="arch" type="xml">
+            <form>
+
+            </form>
+        </field>
+    </record>
+</odoo>

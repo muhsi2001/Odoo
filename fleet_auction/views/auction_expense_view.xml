@@ -1,0 +1,30 @@
+<odoo>
+    <record model="ir.ui.view" id="auction_expenses_tree">
+        <field name="name">auction_expenses.tree</field>
+        <field name="model">auction.expenses</field>
+        <field name="arch" type="xml">
+            <tree>
+                        <field name="exp_product_id"/>
+                        <field name="description"/>
+                        <field name="sub_total_price"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="auction_expenses_form">
+        <field name="name">auction_expenses.form</field>
+        <field name="model">auction.expenses</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="exp_product_id"/>
+                        <field name="description"/>
+                        <field name="sub_total_price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

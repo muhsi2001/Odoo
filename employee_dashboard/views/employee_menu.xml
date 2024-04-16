@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <menuitem name="Dashboard"
+              id="employee_dashboard"
+              sequence="0"
+              action="employee_dashboard_action"
+              parent="hr.menu_hr_root"/>
+</odoo>

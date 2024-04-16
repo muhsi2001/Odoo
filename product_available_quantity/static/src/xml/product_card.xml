@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="point_of_sale.ProductCard" t-inherit="point_of_sale.ProductCard" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-img')]" position="after">
+            <div t-if="props.availableQty > 0">
+            <div t-if="props.availableQty > 10" style="color:green;">
+               <div class="product-available-quantity">
+                   <label>Available Qty : </label>
+                   <span t-esc="props.availableQty">
+                   </span>
+               </div>
+            </div>
+            <div t-if="props.availableQty &lt;= 10" style="color:red;">
+                   <label>Available Qty : </label>
+                   <span t-esc="props.availableQty">
+                   </span>
+            </div>
+            </div>
+            <div t-if="props.availableQty &lt;=0" style="color:red;">
+                <span>No stock</span>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="report_auction">
+       <t t-call="web.html_container">
+               <t t-call="web.external_layout">
+                   <div class="page">
+                       <div class="oe_structure"/>
+                       <h2>Auction Report</h2>
+                       <br> </br>
+                   </div>
+                   <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Fleet Name</th>
+                                <th>Current Value</th>
+                                <th>Won Amount</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>State</th>
+                                <th>Responsible</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="data['report']" t-as="rec">
+                            <tr>
+                                <td>
+                                    <span t-out="rec['name']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['vehicle']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['start_price']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['won_price']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['start_date']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['end_date']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['state']"/>
+                                </td>
+                                <td>
+                                    <span t-out="rec['user']"/>
+                                </td>
+                            </tr>
+                            </t>
+                        </tbody>
+                   </table>
+               </t>
+       </t>
+   </template>
+</odoo>

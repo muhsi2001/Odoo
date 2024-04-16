@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <template id="most_viewed_products_snippet" name="Most Viewed Products">
+       <section class="container viewed_products_snippet">
+           <div class="row">
+               <div class="col-md-12">
+                <div class="text-center py-5">
+                   <h3>Most Viewed Products</h3><br> </br>
+                        <div class="h3" style="text-align:center"> </div>
+                   <div id="view_products"> </div>
+                </div>
+               </div>
+           </div>
+       </section>
+    </template>
+
+    <template id="viewed_snippet" inherit_id="website.snippets" priority="8">
+      <xpath expr="//div[@id='snippet_effect']//t[@t-snippet][last()]" position="after">
+               <t t-snippet="sold_viewed_snippet.most_viewed_products_snippet" t-thumbnail="/fleet_auction/static/src/img/settings-icon.svg"/>
+       </xpath>
+    </template>
+</odoo>
+

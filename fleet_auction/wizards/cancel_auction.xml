@@ -1,0 +1,28 @@
+<odoo>
+    <record id="cancel_auction_form" model="ir.ui.view">
+            <field name="name">cancel.auction.form</field>
+            <field name="model">cancel.auction</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Auction">
+<!--                    <field name="cancel_reason" invisible="1"></field>-->
+                    <group>
+                        <field name="cancel_reason"/>
+                    </group>
+                    <footer>
+                        <button name="button_cancel" string="Cancel Auction" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    <record id="cancel_auction_wizard" model="ir.actions.act_window">
+        <field name="name">Cancel Auction</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cancel.auction</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="cancel_auction_form"/>
+        <field name="target">new</field>
+
+    </record>
+</odoo>

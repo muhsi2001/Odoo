@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="bid_record" model="ir.actions.act_window">
+        <field name="name">Bid</field>
+        <field name="res_model">auction.bid</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem id="bid_root_menu"
+              name="Bid"
+              action="bid_record"
+              parent="fleet_root_menu"
+              />
+</odoo>

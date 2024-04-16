@@ -1,0 +1,38 @@
+<odoo>
+	<data>
+    	<record id="auction_end_email_template" model="mail.template">
+        	<field name="name">Auction End Template</field>
+        	<field name="model_id"
+               	ref="fleet_auction.model_fleet_auction"/>
+        	<field name="email_from">{{ object.responsible_id.partner_id.email }}</field>
+        	<field name="email_to">{{ object.customer_id.email }}</field>
+			<field name="subject">Congratulations {{ object.customer_id.name }}</field>
+			<field name="body_html" type="html">
+				<div style="margin: 0px; padding: 0px;">
+                	<div style="margin: 0px; padding: 0px;">
+                    	<p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        	Dear <t t-out="object.customer_id.name"/>,
+                        	<br/>
+                        	<br/>
+							Congratulations!!
+                            <br/>
+                        	<br/>
+							<t t-if="object.sequence_no">
+                                You have won the auction <span style="font-weight:bold;" t-out="object.sequence_no"> </span>
+							</t>
+							amounting in <span style="font-weight:bold;" t-out="format_amount(object.won_price, object.currency_id)"> </span>
+							from <t t-out="object.company_id.name or ''">YourCompany</t>.
+                        	<br/>
+<!--                        	Do not hesitate to contact us if you have any questions.-->
+							<br>
+							</br>
+							Regards,
+                        	<br/>
+                        	<t t-out="object.responsible_id.name"/>
+                    	</p>
+                	</div>
+            	</div>
+        	</field>
+    	</record>
+	</data>
+</odoo>

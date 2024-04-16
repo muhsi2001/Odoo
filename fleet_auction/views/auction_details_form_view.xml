@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="auction_details_form">
+       <t t-call="website.layout">
+           <div id="wrap" class="oe_structure oe_empty">
+               <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                   <div class="container">
+                       <form>
+                           <br> </br>
+                           <div class="row">
+                               <div class="col">
+                               <h3>Auction Details</h3>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Vehicle Name</span><br> </br>
+                                    <t t-foreach="data" t-as="rec">
+                                    <input id="vehicle" type="text" t-att-value="str(rec.vehicle_id.name+'/'+rec.vehicle_id.brand_id.name)" class="form-control s_website_form_input" name="vehicle" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Start Date</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="startdate" type="text" t-att-value="rec.start_date" class="form-control s_website_form_input" name="startdate" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">End Date</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="enddate" type="text" t-att-value="rec.end_date" class="form-control s_website_form_input" name="enddate" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                                <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Customer</span>
+                                    <t t-foreach="data" t-as="rec">
+                                    <input id="customer" type="text" t-att-value="rec.customer_id.name" class="form-control s_website_form_input" name="customer" style="width: 200px;" readonly="1"/>
+                                    </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Start Price</span>
+                                    <t t-foreach="data" t-as="rec">
+                                   <input id="price" type="number" t-att-value="rec.start_price" class="form-control s_website_form_input" name="price" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Won Amount</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="amount" type="number" t-att-value="rec.won_price" class="form-control s_website_form_input" name="amount" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                   <div style="width: 200px;" class="s_website_form_label">
+                                        <a href="/bid">
+                                            <button type="button" class="btn btn-primary">Create Bid</button>
+                                        </a>
+                                   </div>
+                                   <br> </br> <br> </br> <br> </br>
+                               </div>
+                               </div>
+                               <div class="col">
+                               <h3>Vehicle Details</h3>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Model Name</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="model" type="text" t-att-value="rec.vehicle_id.name" class="form-control s_website_form_input" name="model" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Manufacturer</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="manufacturer" type="text" t-att-value="rec.vehicle_id.brand_id.name" class="form-control s_website_form_input" name="manufacturer" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Vehicle Type</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="type" type="text" t-att-value="rec.vehicle_id.vehicle_type" class="form-control s_website_form_input" name="type" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                                <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Category</span>
+                                    <t t-foreach="data" t-as="rec">
+                                    <input id="category" type="text" t-att-value="rec.vehicle_id.category_id.name" class="form-control s_website_form_input" name="category" style="width: 200px;" readonly="1"/>
+                                    </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Seats Number</span>
+                                   <t t-foreach="data" t-as="rec">
+                                   <input id="seats" type="text" t-att-value="rec.vehicle_id.seats" class="form-control s_website_form_input" name="seats" style="width: 200px;" readonly="1"/>
+                                   </t>
+                               </div>
+                               <br> </br>
+                               <div class="s_website_form_rows row s_col_no_bgcolor">
+                                   <span class="s_website_form_label_content">Color</span>
+                                    <t t-foreach="data" t-as="rec">
+                                   <input id="color" type="text" t-att-value="rec.vehicle_id.color" class="form-control s_website_form_input" name="color" style="width: 200px;" readonly="1"/>
+                                    </t>
+                               </div>
+                               </div>
+                           </div>
+                       </form>
+                   </div>
+               </section>
+           </div>
+       </t>
+   </template>
+</odoo>

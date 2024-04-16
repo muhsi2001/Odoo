@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <template id="custom_web_snippet" name="Custom Snippet">
+       <section class="oe structure container">
+           <div class="col-12 row m-auto">
+               <div class="col-md-12">
+                   <section class="card col-3 m-auto" style="margin-top:30px;">
+                        <div class="row">
+                            <h3>100</h3><br> </br>
+<!--                        <div class="h3" style="text-align:center"> </div>-->
+                   <div id="snippet_dynamic"> </div>
+                        </div>
+                   </section>
+               </div>
+           </div>
+       </section>
+    </template>
+
+    <template id="basic_inner_content_snippet" name="Inner Content Snippet">
+        <div class="s_text_highlight">
+            <span>Big Offer Sale</span>
+        </div>
+    </template>
+
+    <template id="dynamic_web_snippet" name="Dynamic Custom Snippet">
+       <section class="container dynamic_custom_snippet">
+           <div class="row">
+               <div class="col-md-12">
+                   <div class="text-center py-5">
+                   <h3>Dynamic Custom Snippet</h3><br> </br>
+                       <div class="h3" style="text-align:center"> </div>
+<!--                   <div id="dynamic_snippet"> </div>-->
+                   </div>
+               </div>
+           </div>
+       </section>
+    </template>
+
+
+
+    <template id="custom_snippet" inherit_id="website.snippets" priority="8">
+      <xpath expr="//div[@id='snippet_structure']//t[@t-snippet][last()]" position="after">
+               <t t-snippet="custom_snippet.custom_web_snippet" t-thumbnail="/custom_snippet/static/src/img/settings-icon.svg"/>
+      </xpath>
+    </template>
+
+    <template id="inner_content_snippet" inherit_id="website.snippets" priority="8">
+      <xpath expr="//div[@id='snippet_content']//t[@t-snippet][last()]" position="after">
+               <t t-snippet="custom_snippet.basic_inner_content_snippet" t-thumbnail="/custom_snippet/static/src/img/settings-icon.svg"/>
+      </xpath>
+    </template>
+
+    <template id="dynamic_custom_snippet" inherit_id="website.snippets" priority="8">
+      <xpath expr="//div[@id='snippet_effect']//t[@t-snippet][last()]" position="after">
+               <t t-snippet="custom_snippet.dynamic_web_snippet" t-thumbnail="/custom_snippet/static/src/img/settings-icon.svg"/>
+       </xpath>
+    </template>
+</odoo>

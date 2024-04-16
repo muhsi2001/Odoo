@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="action_custom_product" model="ir.actions.act_window">
+        <field name="name">Custom Product</field>
+        <field name="res_model">custom.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="custom_product_root_menu"
+              name="Custom Product"
+              action="action_custom_product"
+              />
+</odoo>

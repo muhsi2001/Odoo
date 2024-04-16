@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="auction_view_form">
+       <t t-call="website.layout">
+           <div id="wrap" class="oe_structure oe_empty">
+               <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                   <div class="container">
+                           <br> </br>
+                           <h3>Fleet Auction</h3>
+                           <br> </br>
+                           <h5>Ongoing Auctions</h5>
+                           <div class="row">
+                               <t t-foreach="ongoing" t-as="rec">
+                                   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                       <a t-att-href="'/auction/%s' %rec.id">
+                                       <div class="card" style="width:300px">
+                                           <div class="card body">
+                                               <span t-out="rec.sequence_no"/>
+                                           </div>
+                                       </div>
+                                       </a>
+                                   </div>
+                               </t>
+                           </div>
+                           <br> </br>
+                           <h5>Draft Auctions</h5>
+                           <div class="row">
+                               <t t-foreach="draft" t-as="rec">
+                                   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                       <a t-att-href="'/auction/%s' %rec.id">
+                                       <div class="card" style="width:300px" >
+                                           <div class="card body">
+                                               <span t-out="rec.sequence_no"/>
+                                           </div>
+                                       </div>
+                                       </a>
+                                   </div>
+                               </t>
+                           </div>
+                            <br> </br>
+                           <h5>Confirmed Auctions</h5>
+                           <div class="row">
+                               <t t-foreach="confirmed" t-as="rec">
+                                   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                       <a t-att-href="'/auction/%s' %rec.id">
+                                       <div class="card" style="width:300px">
+                                           <div class="card body">
+                                               <span t-out="rec.sequence_no"/>
+                                           </div>
+                                       </div>
+                                       </a>
+                                   </div>
+                               </t>
+                           </div>
+                           <br> </br>
+                           <h5>Cancelled Auctions</h5>
+                           <div class="row">
+                               <t t-foreach="cancelled" t-as="rec">
+                                   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                       <a t-att-href="'/auction/%s' %rec.id">
+                                       <div class="card" style="width:300px">
+                                           <div class="card body">
+                                               <span t-out="rec.sequence_no"/>
+                                           </div>
+                                       </div>
+                                       </a>
+                                   </div>
+                               </t>
+                           </div>
+                           <br> </br>
+                           <h5>Success Auctions</h5>
+                           <div class="row">
+                               <t t-foreach="success" t-as="rec">
+                                   <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                       <a t-att-href="'/auction/%s' %rec.id">
+                                       <div class="card" style="width:300px">
+                                           <div class="card body">
+                                               <span t-out="rec.sequence_no"/>
+                                           </div>
+                                       </div>
+                                       </a>
+                                   </div>
+                               </t>
+                           </div>
+                   </div>
+               </section>
+           </div>
+       </t>
+   </template>
+</odoo>

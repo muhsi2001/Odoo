@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+    <templates>
+        <t t-name="sold_viewed_snippet.sold_snippet_carousel">
+            <div t-attf-id="credit_carousel" class="container carousel slide" data-bs-ride="carousel" t-att-data-bs-interval="interval">
+                <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                 <t t-foreach="data" t-as="product" t-key="product.id">
+                 <div t-att-class="product.is_active ? 'carousel-item active':'carousel-item'">
+                    <div class="row">
+                     <t t-foreach="product" t-as="rec" t-key="rec.id">
+                        <div class="block span3 col-3">
+                            <a t-att-href="rec.website">
+                            <div class="card-group">
+                                <div class="card">
+                                        <img class="card-img-top" t-attf-src="data:image/png;base64,{{rec.image}}"
+                                             	style="padding: 0px; margin: 0px; height: 160px; width:305px;"/>
+                                        <span class="mb-0"><t t-esc="rec.name"/></span>
+                                </div>
+                            </div><br> </br>
+                            </a>
+                            <a t-attf-href="#credit_carousel" class="carousel-control-prev" data-bs-slide="prev" role="button" aria-label="Previous" title="Previous" style="position:absolute; width:2%; top:33px; right:30px">
+                                <span class="fa fa-chevron-circle-left fa-2x" style="color:black"/>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a t-attf-href="#credit_carousel" class="carousel-control-next" data-bs-slide="next" role="button" aria-label="Next" title="Next" style="position:absolute; width:2%; top:33px">
+                                <span class="fa fa-chevron-circle-right fa-2x" style="color:black"/>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+                        </t>
+                    </div>
+                 </div>
+                 </t>
+                </div>
+            </div>
+            </t>
+</templates>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<template id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.PartnerListScreen" t-inherit-mode="extension">
+        <xpath expr="//table//thead//tr" position="inside">
+            <th>Due Limit</th>
+            <th>Amount Due</th>
+       </xpath>
+    </t>
+    <t t-extend="PartnerLine" t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr" position="inside">
+            <td class="text-center">
+                <t t-esc='props.partner.due_limit or ""' />
+            </td>
+            <td class="text-center">
+                <t t-esc='props.partner.due_amount or ""' />
+            </td>
+        </xpath>
+    </t>
+</template>

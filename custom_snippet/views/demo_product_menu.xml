@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="prod_record" model="ir.actions.act_window">
+        <field name="name">Demo Product</field>
+        <field name="res_model">demo.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="prod_root_menu"
+              name="Demo Product"
+              action="prod_record"
+              />
+
+</odoo>

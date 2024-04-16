@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="product_details_form" model="ir.ui.view">
+            <field name="name">product.details.form</field>
+            <field name="model">product.details</field>
+            <field name="arch" type="xml">
+                <form string="Product Details">
+                    <group>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="product_id"/>
+                        <field name="variant_id"/>
+<!--                        <field name="available_variants" invisible="1"/>-->
+
+                     <field name="vendor_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="create_rfq_po_bill" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+    </record>
+</odoo>

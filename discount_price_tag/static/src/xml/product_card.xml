@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="point_of_sale.ProductCard" t-inherit="point_of_sale.ProductCard" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-information-tag')]" position="before">
+            <t t-if="props.discountPro">
+                <div class="discount-price-tag" style="width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 0 30px 30px 0;
+                            border-color: transparent #90EE90 transparent transparent; rotate:270deg;" title="Discounted Product">
+                    <label style="rotate:45deg;"><strong>Sale</strong></label>
+<!--                    <i class="discount-price-tag-logo " role="img" aria-label="Discounted Product" title="Discounted Product"> </i>-->
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

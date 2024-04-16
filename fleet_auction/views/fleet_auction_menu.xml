@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="fleet_record" model="ir.actions.act_window">
+        <field name="name">Fleet Auction</field>
+        <field name="res_model">fleet.auction</field>
+        <field name="view_mode">tree,form,search</field>
+
+        <field name="context">{'search_default_ongoing_state' : 1, 'search_default_draft_state' : 1}</field>
+
+    </record>
+
+    <menuitem id="fleet_root_menu"
+              name="Fleet Auction"
+              action="fleet_record"
+              />
+
+    <menuitem id="auction_menu"
+              name="Auction"
+              parent="fleet_root_menu"
+              action="fleet_record"/>
+
+    <menuitem id="auction_report_menu"
+              name="Reporting"
+              parent="fleet_root_menu"/>
+
+    <menuitem id="auction_report_submenu"
+              name="Auction Report"
+              parent="auction_report_menu"
+              action="auction_report_wizard"/>
+
+</odoo>

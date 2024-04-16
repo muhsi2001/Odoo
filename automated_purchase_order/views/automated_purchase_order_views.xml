@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+<record model="ir.ui.view" id="automated_purchase_order_tree">
+        <field name="name">automated_purchase_order.tree</field>
+        <field name="model">automated.purchase.order</field>
+        <field name="arch" type="xml">
+            <tree>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_auction_form">
+        <field name="name">fleet_auction.form</field>
+        <field name="model">fleet.auction</field>
+        <field name="arch" type="xml">
+            <form>
+
+            </form>
+        </field>
+    </record>
+</odoo>

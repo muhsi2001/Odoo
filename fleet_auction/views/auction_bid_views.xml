@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="auction_bid_tree">
+        <field name="name">auction_bid.tree</field>
+        <field name="model">auction.bid</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="bid_amt"/>
+                <field name="customer"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="auction_bid_form">
+        <field name="name">auction_bid.form</field>
+        <field name="model">auction.bid</field>
+        <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="button_confirmed" string="Confirm" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,confirmed"
+                               default="draft"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="auction_id" domain="[('state', '=', 'ongoing')]"/>
+                                <field name="bid_price"/>
+                                <field name="bid_amt"/>
+<!--                                <field name="confirmed_bids" invisible="1" groups="fleet_auction.group_auction_users"/>-->
+                            </group>
+                            <group>
+                                <field name="bid_date"/>
+                                <field name="customer"/>
+                                <field name="phone_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="auction_bid_search">
+        <field name="name">auction_bid.search</field>
+        <field name="model">auction.bid</field>
+        <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+
+            <filter name="draft_state" string="Draft" domain="[('state', '=', 'draft')]"/>
+            <filter name="confirmed_state" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+        </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="action_automated_po" model="ir.actions.act_window">
+        <field name="name">Automated Purchase Order</field>
+        <field name="res_model">automated.purchase.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="automated_po_root_menu"
+              name="Automated Purchase Order"
+              action="action_automated_po"
+              />
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="action_multi_company_products" model="ir.actions.act_window">
+        <field name="name">Multi Company Products</field>
+        <field name="res_model">multi.company.products</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="multi_company_products_root_menu"
+              name="Multi Company Products"
+              action="action_multi_company_products"
+              />
+</odoo>

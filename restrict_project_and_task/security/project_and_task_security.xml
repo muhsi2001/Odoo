@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record model="ir.module.category" id="module_category_task">
+        <field name="name">Projects and Tasks</field>
+        <field name="description">Category for Tasks</field>
+    </record>
+
+    <record id="group_limited_task_viewers" model="res.groups">
+        <field name="name">View Limited Projects and Tasks</field>
+        <field name="category_id" ref="module_category_task"/>
+    </record>
+
+<!--    <record id = "project_visibility" model = "ir.rule">-->
+<!--       <field name = "name"> View Limited Users for Projects</field>-->
+<!--       <field name = "model_id" ref = "model_project_project" />-->
+<!--       <field name = "groups" eval = "[(4, ref ('group_limited_task_viewers'))]"/>-->
+<!--        <field name="domain_force">[('limited_users_id', '=', user.id)]</field>-->
+<!--        <field name = "perm_read" eval = "True" />-->
+<!--       <field name = "perm_write" eval = "True" />-->
+<!--       <field name = "perm_create" eval = "True" />-->
+<!--       <field name = "perm_unlink" eval = "True" />-->
+<!--    </record>-->
+
+     <record id = "task_visibility" model = "ir.rule">
+        <field name = "name"> View Limited Users for Tasks</field>
+        <field name = "model_id" ref = "model_project_task" />
+        <field name = "groups" eval = "[(4, ref ('group_limited_task_viewers'))]"/>
+        <field name="domain_force">[('limited_users_id', '=', user.id)]</field>
+        <field name = "perm_read" eval = "True" />
+        <field name = "perm_write" eval = "True" />
+        <field name = "perm_create" eval = "True" />
+        <field name = "perm_unlink" eval = "True" />
+     </record>
+
+    <record id = "proj_visibility" model = "ir.rule">
+        <field name = "name"> View Limited Users for Project</field>
+        <field name = "model_id" ref = "model_project_project" />
+        <field name = "groups" eval = "[(4, ref ('group_limited_task_viewers'))]"/>
+        <field name="domain_force">[('limited_users_id', '=', user.id)]</field>
+        <field name = "perm_read" eval = "True" />
+        <field name = "perm_write" eval = "True" />
+        <field name = "perm_create" eval = "True" />
+        <field name = "perm_unlink" eval = "True" />
+     </record>
+
+<!--     <record id="group_limited_project_viewers" model="res.groups">-->
+<!--        <field name="name">View Limited Projects and Tasks</field>-->
+<!--        <field name="category_id" ref="base.module_category_services_project"/>-->
+<!--&lt;!&ndash;         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>&ndash;&gt;-->
+<!--    </record>-->
+</odoo>
